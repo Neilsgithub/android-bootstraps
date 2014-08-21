@@ -1,14 +1,14 @@
 package info.xiequan.androidbootstraps.activity;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import info.xiequan.androidbootstraps.R;
+import info.xiequan.androidbootstraps.base.BaseActivity;
 
 
-public class MyActivity extends ActionBarActivity {
+public class MyActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
