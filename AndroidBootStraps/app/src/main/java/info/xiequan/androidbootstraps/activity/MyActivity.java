@@ -16,6 +16,26 @@ public class MyActivity extends BaseActivity {
         setContentView(R.layout.activity_my);
     }
 
+    @Override
+    protected void beforeInitView() {
+
+    }
+
+    @Override
+    protected void initView() {
+
+    }
+
+    @Override
+    protected void initListener() {
+
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

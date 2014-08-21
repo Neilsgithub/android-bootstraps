@@ -1,9 +1,11 @@
 package info.xiequan.androidbootstraps.base;
 
 import android.app.Application;
+import android.os.Environment;
 import android.os.Process;
 import android.support.v4.app.FragmentActivity;
 
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -13,6 +15,8 @@ public class BaseApplication extends Application {
     private static final String TAG = BaseApplication.class.getName();
     private static BaseApplication baseApplication;
     private ArrayList<FragmentActivity> activities;
+
+
 
     public BaseApplication() {
         baseApplication = this;
@@ -29,7 +33,10 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
+        Thread.setDefaultUncaughtExceptionHandler(new MyExceptionHandler());
+        File ext = Environment.getExternalStorageDirectory();
+        File cacheDir = new File(ext, "app");
+        activities = new ArrayList<FragmentActivity>();
     }
 
 
