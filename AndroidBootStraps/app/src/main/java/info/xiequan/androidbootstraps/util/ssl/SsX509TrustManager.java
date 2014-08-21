@@ -1,4 +1,4 @@
-package info.xiequan.androidbootstraps.util;
+package info.xiequan.androidbootstraps.util.ssl;
 
 import java.io.IOException;
 import java.io.InputStream;

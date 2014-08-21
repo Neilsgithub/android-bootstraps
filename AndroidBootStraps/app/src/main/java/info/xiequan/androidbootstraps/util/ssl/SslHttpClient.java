@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package info.xiequan.androidbootstraps.util;
+package info.xiequan.androidbootstraps.util.ssl;
 
 import java.io.InputStream;
 import java.security.GeneralSecurityException;
