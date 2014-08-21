@@ -1,9 +1,11 @@
-package info.xiequan.androidbootstraps;
+package info.xiequan.androidbootstraps.activity;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import info.xiequan.androidbootstraps.R;
 
 
 public class MyActivity extends ActionBarActivity {
