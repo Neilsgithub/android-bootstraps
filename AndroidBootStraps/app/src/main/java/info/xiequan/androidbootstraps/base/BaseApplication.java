@@ -10,6 +10,8 @@ import java.util.ArrayList;
 
 /**
  * Created by spark on 22/8/14.
+ * @author xiequan
+ * website: www.blueowls.net
  */
 public class BaseApplication extends Application {
     private static final String TAG = BaseApplication.class.getName();

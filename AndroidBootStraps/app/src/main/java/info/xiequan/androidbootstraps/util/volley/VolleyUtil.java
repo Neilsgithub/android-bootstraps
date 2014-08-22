@@ -34,6 +34,12 @@ import info.xiequan.androidbootstraps.util.StringUtils;
 import info.xiequan.androidbootstraps.util.cache.ACache;
 import info.xiequan.androidbootstraps.util.network.NetworkUtils;
 
+/**
+ * Created by spark on 22/8/14.
+ *
+ * @author xiequan
+ * website: www.blueowls.net
+ */
 
 public class VolleyUtil {
     private static final String TAG = VolleyUtil.class.getName();
@@ -46,6 +52,7 @@ public class VolleyUtil {
     private ACache aCache;
 
     private VolleyUtil(Context context) {
+        //SSL 加密协议
 //        InputStream keyStore =context.getResources().openRawResource();
 //        mRequestQueue = Volley.newRequestQueue(context,new ExtHttpClientStack(new SslHttpClient(keyStore,"",443)));
         mRequestQueue = Volley.newRequestQueue(context);
