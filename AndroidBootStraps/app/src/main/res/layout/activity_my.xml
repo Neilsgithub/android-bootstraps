@@ -14,4 +14,24 @@
         android:layout_height="wrap_content"
         android:text="广告测试页面"
         />
-</LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <EditText android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:cursorVisible="false"
+            android:editable="false"
+            android:id="@+id/editText"/>
+
+        <TextView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="300dp"
+
+            android:id="@+id/logText"/>
+        </LinearLayout>
+    </ScrollView>
+    </LinearLayout>

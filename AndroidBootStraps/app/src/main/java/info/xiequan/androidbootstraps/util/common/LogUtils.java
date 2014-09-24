@@ -1,4 +1,4 @@
-package info.xiequan.androidbootstraps.util;
+package info.xiequan.androidbootstraps.util.common;
 
 import android.util.Log;
 
@@ -6,7 +6,10 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * Created by spark on 22/8/14.
+ * volley String callback
+ * Created by spark on 23/8/14.
+ * www.blueowls.net
+ * i@xiequan.info
  */
 public class LogUtils {
     public static void debug(String tag, Object obj){

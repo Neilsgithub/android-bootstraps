@@ -1,4 +1,4 @@
-package info.xiequan.androidbootstraps.util;
+package info.xiequan.androidbootstraps.util.common;
 
 import android.app.Activity;
 import android.content.Context;
@@ -44,9 +44,13 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import io.ganguo.huoyun.util.debug.DebugUtils;
+
 /**
+ *
  * Created by spark on 23/8/14.
- * @author xiequan
+ * www.blueowls.net
+ * i@xiequan.info
  */
 
 public class AndroidUtils {

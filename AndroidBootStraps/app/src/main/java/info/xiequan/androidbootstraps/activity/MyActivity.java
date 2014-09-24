@@ -1,5 +1,6 @@
 package info.xiequan.androidbootstraps.activity;
 
+import android.location.LocationManager;
 import android.widget.LinearLayout;
 
 import com.google.android.gms.ads.AdRequest;
@@ -12,8 +13,9 @@ import info.xiequan.androidbootstraps.base.BaseActivity;
 
 public class MyActivity extends BaseActivity {
     private AdView adView;
+    private LocationManager lm;
     private static final String AD_UNIT_ID = "ca-app-pub-4706145830093249/3114135639";
-
+    private static final  String TAG =MyActivity.class.getName();
     @Override
     protected void beforeInitView() {
         setContentView(R.layout.activity_my);
@@ -29,8 +31,8 @@ public class MyActivity extends BaseActivity {
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
-
         adView.loadAd(adRequest);
+
 
     }
 
@@ -43,6 +45,7 @@ public class MyActivity extends BaseActivity {
     protected void initData() {
 
     }
+
     @Override
     public void onResume() {
         super.onResume();
