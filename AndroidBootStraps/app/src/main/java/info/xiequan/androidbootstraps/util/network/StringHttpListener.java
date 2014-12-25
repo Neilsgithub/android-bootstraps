@@ -1,8 +1,8 @@
 package info.xiequan.androidbootstraps.util.network;
 
 
-import io.ganguo.huoyun.exception.NotWebDataException;
-import io.ganguo.huoyun.util.common.StringUtils;
+import info.xiequan.androidbootstraps.exception.NotWebDataException;
+import info.xiequan.androidbootstraps.util.common.StringUtils;
 
 /**
  * Created by spark on 15/9/14.

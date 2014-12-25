@@ -4,7 +4,7 @@ package info.xiequan.androidbootstraps.exception;
 import info.xiequan.androidbootstraps.constant.ExceptionType;
 
 /**
- * Created by Wilson on 14-7-24.
+ *
  */
 public abstract class BaseException extends RuntimeException {
 

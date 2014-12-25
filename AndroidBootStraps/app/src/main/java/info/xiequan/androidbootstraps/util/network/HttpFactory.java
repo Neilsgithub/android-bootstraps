@@ -2,8 +2,9 @@ package info.xiequan.androidbootstraps.util.network;
 
 import android.util.Log;
 
-import io.ganguo.huoyun.base.BaseApplication;
-import io.ganguo.huoyun.exception.NotRegistionContextException;
+import info.xiequan.androidbootstraps.base.BaseApplication;
+import info.xiequan.androidbootstraps.exception.NotRegistionContextException;
+
 
 /**
  * Created by spark on 15/9/14.

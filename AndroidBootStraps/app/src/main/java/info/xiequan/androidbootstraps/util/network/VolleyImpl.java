@@ -17,8 +17,8 @@ import org.json.JSONObject;
 
 import java.util.Map;
 
-import io.ganguo.huoyun.exception.NotWebDataException;
-import io.ganguo.huoyun.util.cache.CacheTime;
+import info.xiequan.androidbootstraps.exception.NotWebDataException;
+import info.xiequan.androidbootstraps.util.cache.CacheTime;
 
 
 /**

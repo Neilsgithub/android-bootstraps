@@ -4,6 +4,7 @@ package info.xiequan.androidbootstraps.interfaces;
 import info.xiequan.androidbootstraps.constant.StringConstant;
 import info.xiequan.androidbootstraps.exception.BaseException;
 import info.xiequan.androidbootstraps.exception.WebDataException;
+import info.xiequan.androidbootstraps.util.common.StringUtils;
 
 /**
  * Volley call back for string format

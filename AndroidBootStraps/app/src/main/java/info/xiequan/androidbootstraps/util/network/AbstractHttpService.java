@@ -13,8 +13,8 @@ import java.util.Map;
 import java.util.Stack;
 import java.util.concurrent.ConcurrentHashMap;
 
-import io.ganguo.huoyun.util.cache.Cache;
-import io.ganguo.huoyun.util.common.StringUtils;
+import info.xiequan.androidbootstraps.util.cache.Cache;
+import info.xiequan.androidbootstraps.util.common.StringUtils;
 
 
 /**
@@ -27,7 +27,6 @@ public abstract class AbstractHttpService implements HttpService {
     private Map<String, String> headers = new HashMap<String, String>();
     private Map<String, Stack<HttpListener>> currentQequests;
     private Cache mCache;
-
 
     public AbstractHttpService() {
         currentQequests = new ConcurrentHashMap<String, Stack<HttpListener>>();

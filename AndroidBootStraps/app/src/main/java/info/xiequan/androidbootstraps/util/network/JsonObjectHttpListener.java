@@ -5,8 +5,8 @@ import android.util.Log;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import io.ganguo.huoyun.exception.NotWebDataException;
-import io.ganguo.huoyun.util.common.StringUtils;
+import info.xiequan.androidbootstraps.exception.NotWebDataException;
+import info.xiequan.androidbootstraps.util.common.StringUtils;
 
 
 /**
