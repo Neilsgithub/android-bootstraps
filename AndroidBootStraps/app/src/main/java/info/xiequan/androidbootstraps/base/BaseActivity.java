@@ -16,7 +16,7 @@ public abstract class BaseActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        ((BaseApplication)getApplication()).addInstance(this);
+        ((BaseApplication) getApplication()).addInstance(this);
         beforeInitView();
         initView();
         initListener();
@@ -51,7 +51,7 @@ public abstract class BaseActivity extends FragmentActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ((BaseApplication)getApplication()).removeInstance(this);
+        ((BaseApplication) getApplication()).removeInstance(this);
     }
 
     @Override
@@ -62,14 +62,6 @@ public abstract class BaseActivity extends FragmentActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-//        if ((System.currentTimeMillis() - mExitTime) > 2000) {
-//            Toast.makeText(this, "再按一次退出快单货运", Toast.LENGTH_SHORT).show();
-//            mExitTime = System.currentTimeMillis();
-//
-//        } else {
-//            AQUtility.cleanCacheAsync(this, 3000000, 2000000);
-//            MobclickAgent.onKillProcess(this);
-//            ((KuaiDanApplication) getApplication()).exit();
-//        }
+
     }
 }
