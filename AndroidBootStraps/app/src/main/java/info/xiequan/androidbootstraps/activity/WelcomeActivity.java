@@ -38,6 +38,7 @@ public class WelcomeActivity extends BaseActivity {
                 }
                 Intent intent = new Intent();
                 startActivity(intent.setClass(context, MyActivity.class));
+                finish();
             }
         }).start();
     }

@@ -3,8 +3,16 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_light"
-    >
+    android:background="@android:color/holo_blue_light">
 
+    <TextView
+        android:layout_marginTop="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="谢权个人客户端"
+        android:layout_gravity="center_vertical"
+        android:textColor="@android:color/white"
+        android:gravity="center_vertical|center_horizontal"
+        android:textSize="24sp" />
 
 </LinearLayout>
