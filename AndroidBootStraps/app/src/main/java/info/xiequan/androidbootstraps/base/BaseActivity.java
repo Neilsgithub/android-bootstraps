@@ -11,7 +11,6 @@ import android.view.Window;
 public abstract class BaseActivity extends FragmentActivity {
     protected Context context = this;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +20,10 @@ public abstract class BaseActivity extends FragmentActivity {
         initView();
         initListener();
         initData();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
     }
 
     /**

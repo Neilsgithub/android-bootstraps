@@ -17,6 +17,18 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></LinearLayout>
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_marginTop="20dp"
+                android:id="@+id/btn_bdmap"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:text="百度地图"
+                android:textColor="@android:color/white"
+                android:background="@android:color/holo_blue_dark"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
     </ScrollView>
 </LinearLayout>
