@@ -2,7 +2,6 @@ package info.xiequan.androidbootstraps.activity;
 
 import android.content.Intent;
 import android.location.LocationManager;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -96,7 +95,6 @@ public class MyActivity extends BaseActivity implements View.OnClickListener {
             latitude = String.valueOf(location.getLatitude());
             longtitude = String.valueOf(location.getLongitude());
             AndroidUtils.toast(context, "纬度" + latitude + "经度" + latitude);
-            Log.e("messi","纬度" + latitude + "经度" + latitude);
         }
     }
 

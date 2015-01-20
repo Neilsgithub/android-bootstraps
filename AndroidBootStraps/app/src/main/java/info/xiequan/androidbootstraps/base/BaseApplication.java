@@ -5,20 +5,21 @@ import android.os.Environment;
 import android.os.Process;
 import android.support.v4.app.FragmentActivity;
 
+import com.baidu.mapapi.SDKInitializer;
+
 import java.io.File;
 import java.util.ArrayList;
 
 /**
  * Created by spark on 22/8/14.
+ *
  * @author xiequan
- * website: www.blueowls.net
+ *         website: www.blueowls.net
  */
 public class BaseApplication extends Application {
     private static final String TAG = BaseApplication.class.getName();
     private static BaseApplication baseApplication;
     private ArrayList<FragmentActivity> activities;
-
-
 
     public BaseApplication() {
         baseApplication = this;
@@ -39,6 +40,8 @@ public class BaseApplication extends Application {
         File ext = Environment.getExternalStorageDirectory();
         File cacheDir = new File(ext, "app");
         activities = new ArrayList<FragmentActivity>();
+        // 在使用 SDK 各组间之前初始化 context 信息，传入 ApplicationContext
+        SDKInitializer.initialize(this);
     }
 
 
@@ -62,6 +65,7 @@ public class BaseApplication extends Application {
     public void onExit() {
 
     }
+
     public void removeInstance(FragmentActivity instance) {
         activities.remove(instance);
     }

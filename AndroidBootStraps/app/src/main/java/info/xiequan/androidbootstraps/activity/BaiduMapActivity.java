@@ -22,7 +22,7 @@ import info.xiequan.androidbootstraps.R;
 import info.xiequan.androidbootstraps.base.BaseActivity;
 
 public class BaiduMapActivity extends BaseActivity {
-//    定位相关
+    //    定位相关
     LocationClient mLocClient;
     public MyLocationListenner myListener = new MyLocationListenner();
     private MyLocationConfiguration.LocationMode mCurrentMode;
@@ -32,7 +32,7 @@ public class BaiduMapActivity extends BaseActivity {
     BaiduMap mBaiduMap;
     com.baidu.mapapi.map.MapView abc;
 
-//    UI相关
+    //    UI相关
     RadioGroup.OnCheckedChangeListener radioButtonListener;
     Button requestLocButton;
     boolean isFirstLoc = true;
@@ -127,6 +127,7 @@ public class BaiduMapActivity extends BaseActivity {
     protected void initData() {
 
     }
+
     /**
      * 定位SDK监听函数
      */
