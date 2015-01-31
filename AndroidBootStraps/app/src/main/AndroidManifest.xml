@@ -63,7 +63,6 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 
-
     <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"
@@ -110,6 +109,11 @@
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="blS46QVV4wIZwZf1WLlT4xN6" />
+
+        <activity
+            android:name=".activity.SideChefActivity"
+            android:label="@string/title_activity_side_chef" >
+        </activity>
     </application>
 
 </manifest>

@@ -17,7 +17,7 @@ public interface HttpService {
      * @param params
      * @param httpListener
      */
-    public void doGet(String url, Map<String, String> params, HttpListener<?> httpListener);
+    public void doGet(String url, Map<String, Object> params, HttpListener<?> httpListener);
 
     /**
      * GET 网络请求
@@ -27,7 +27,7 @@ public interface HttpService {
      * @param httpListener
      * @param cacheTime
      */
-    public void doGet(String url, Map<String, String> params, HttpListener<?> httpListener, int cacheTime);
+    public void doGet(String url, Map<String, Object> params, HttpListener<?> httpListener, int cacheTime);
 
     /**
      * POST 网络请求
@@ -36,7 +36,8 @@ public interface HttpService {
      * @param params
      * @param httpListener
      */
-    public void doPost(String url, Map<String, String> params, HttpListener<?> httpListener);
+    public void doPost(String url, Map<String, Object> params, HttpListener<?> httpListener);
+
 
     /**
      * POST 网络请求
@@ -46,6 +47,11 @@ public interface HttpService {
      * @param httpListener
      */
     public void doPost(String url, JSONObject jsonObject, HttpListener<?> httpListener);
+
+    /**
+     * Put 网络请求
+     */
+    public void doPut(String url, Map<String, Object> params, HttpListener<?> httpListener);
 
     /**
      * 获取请求中的头部信息包

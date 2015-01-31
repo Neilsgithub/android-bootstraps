@@ -27,6 +27,7 @@ import info.xiequan.androidbootstraps.util.cache.CacheTime;
  * www.blueowls.net
  * i@xiequan.info
  */
+
 public class VolleyImpl extends AbstractHttpService {
     private static final String TAG = VolleyImpl.class.getName();
     private RequestQueue mRequestQueue;
@@ -46,7 +47,7 @@ public class VolleyImpl extends AbstractHttpService {
      * @param httpListener
      */
     @Override
-    public void doGet(String url, Map<String, String> params, HttpListener<?> httpListener) {
+    public void doGet(String url, Map<String, Object> params, HttpListener<?> httpListener) {
         doGet(url, params, httpListener, CacheTime.NONE);
     }
 
@@ -59,7 +60,7 @@ public class VolleyImpl extends AbstractHttpService {
      * @param cacheTime
      */
     @Override
-    public void doGet(String url, Map<String, String> params, HttpListener<?> httpListener, int cacheTime) {
+    public void doGet(String url, Map<String, Object> params, HttpListener<?> httpListener, int cacheTime) {
         httpListener.onStart();
 
         String urlWithParams = buildUrlParams(url, params);
@@ -80,12 +81,12 @@ public class VolleyImpl extends AbstractHttpService {
      * @param params
      * @param httpListener
      */
+
     @Override
-    public void doPost(String url, Map<String, String> params, HttpListener<?> httpListener) {
-        Log.d(TAG, "doPost: " + url + " params:" + params);
-        httpListener.onStart();
-        doStringPost(url, params, httpListener);
+    public void doPost(String url, Map<String, Object> params, HttpListener<?> httpListener) {
+        doPost(url, params, httpListener);
     }
+
 
     /**
      * POST 网络请求
@@ -99,7 +100,7 @@ public class VolleyImpl extends AbstractHttpService {
         Response.Listener<JSONObject> responseListener = new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                if(response != null) {
+                if (response != null) {
                     httpListener.handleResponse(response.toString());
                 } else {
                     httpListener.onFailure("获取请求数据失败", new NotWebDataException("请求数据为空"));
@@ -116,7 +117,7 @@ public class VolleyImpl extends AbstractHttpService {
             }
 
         };
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, jsonObject, responseListener, errorListener){
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, jsonObject, responseListener, errorListener) {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 return getHeaderMap();
@@ -125,6 +126,11 @@ public class VolleyImpl extends AbstractHttpService {
         request.setRetryPolicy(mRetryPolicy);
         request.setTag(TAG);
         mRequestQueue.add(request);
+    }
+
+    @Override
+    public void doPut(String url, Map<String, Object> params, HttpListener<?> httpListener) {
+
     }
 
     @Override

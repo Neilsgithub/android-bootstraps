@@ -42,7 +42,8 @@ public class HttpFactory {
 
     public static HttpService newHttpService() {
         checkContext();
-        return new VolleyImpl(context);
+//        return new VolleyImpl(context);
+        return null;
     }
 
 }

@@ -9,7 +9,9 @@ import com.loopj.android.http.AsyncHttpClient;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 import java.util.Stack;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -28,9 +30,11 @@ public abstract class AbstractHttpService implements HttpService {
     private Map<String, Stack<HttpListener>> currentQequests;
     private Cache mCache;
 
+
     public AbstractHttpService() {
         currentQequests = new ConcurrentHashMap<String, Stack<HttpListener>>();
     }
+
     // Instruct the library to retry connection when this exception is raised.
     static {
         AsyncHttpClient.allowRetryExceptionClass(javax.net.ssl.SSLException.class);
@@ -149,7 +153,7 @@ public abstract class AbstractHttpService implements HttpService {
      * @param parms
      * @return
      */
-    public String buildUrlParams(String baseUrl, Map<String, String> parms) {
+    public String buildUrlParams(String baseUrl, Map<String, Object> parms) {
         if (parms != null && parms.size() > 0) {
             final StringBuffer sb = new StringBuffer();
             if (sb.indexOf("?") >= 0) {
@@ -158,10 +162,18 @@ public abstract class AbstractHttpService implements HttpService {
                 sb.append('?');
             }
             for (String key : parms.keySet()) {
+                Object value = parms.get(key);
+                if (value instanceof Set) {
+                    sb.append(encodeSetUrl(key, (Set) value));
+                    continue;
+                }
                 try {
                     sb.append(URLEncoder.encode(key, HttpConstants.DEFAULT_PARAMS_ENCODING));
                     sb.append('=');
-                    sb.append(URLEncoder.encode(parms.get(key), HttpConstants.DEFAULT_PARAMS_ENCODING));
+                    if (StringUtils.isEmpty(value.toString())) {
+                        value = "";
+                    }
+                    sb.append(URLEncoder.encode(String.valueOf(value), HttpConstants.DEFAULT_PARAMS_ENCODING));
                     sb.append('&');
                 } catch (UnsupportedEncodingException e) {
                     Log.e(TAG, "URLEncoder.encode ERROR", e);
@@ -171,6 +183,19 @@ public abstract class AbstractHttpService implements HttpService {
             return baseUrl + sb.substring(0, sb.length() - 1);
         }
         return baseUrl;
+    }
+
+    private String encodeSetUrl(String key, Set set) {
+        String setUrl = "";
+        Iterator it = set.iterator();
+        while (it.hasNext()) {
+            setUrl += key;
+            setUrl += "=" + it.next();
+            setUrl += "&";
+
+        }
+
+        return setUrl;
     }
 
 }

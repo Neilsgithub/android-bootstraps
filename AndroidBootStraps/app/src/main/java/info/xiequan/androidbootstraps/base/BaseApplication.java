@@ -10,6 +10,10 @@ import com.baidu.mapapi.SDKInitializer;
 import java.io.File;
 import java.util.ArrayList;
 
+import info.xiequan.androidbootstraps.util.AppConfig;
+import info.xiequan.androidbootstraps.util.cache.CacheManager;
+import info.xiequan.androidbootstraps.util.network.HttpFactory;
+
 /**
  * Created by spark on 22/8/14.
  *
@@ -29,6 +33,11 @@ public class BaseApplication extends Application {
         return baseApplication;
     }
 
+    private void registerModule() {
+        AppConfig.register(this);
+        HttpFactory.register(this);
+        CacheManager.register(this);
+    }
 
     /**
      * 应用启动
@@ -36,6 +45,7 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        registerModule();
         Thread.setDefaultUncaughtExceptionHandler(new MyExceptionHandler());
         File ext = Environment.getExternalStorageDirectory();
         File cacheDir = new File(ext, "app");

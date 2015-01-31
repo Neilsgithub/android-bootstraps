@@ -161,6 +161,7 @@ public class SecureSocketFactory extends SSLSocketFactory {
         setHostnameVerifier(SSLSocketFactory.STRICT_HOSTNAME_VERIFIER);
     }
 
+
     @Override
     public Socket createSocket(Socket socket, String host, int port, boolean autoClose)
             throws IOException {

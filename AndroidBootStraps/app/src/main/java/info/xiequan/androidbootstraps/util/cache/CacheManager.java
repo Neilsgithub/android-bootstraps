@@ -5,7 +5,7 @@ import info.xiequan.androidbootstraps.base.BaseApplication;
 
 /**
  * 缓存管理类
- *
+ * <p/>
  * Created by zhihui_chen on 14-8-14.
  */
 public class CacheManager {
@@ -17,7 +17,7 @@ public class CacheManager {
     }
 
     public static Cache getInstance() {
-        if(mCache == null) {
+        if (mCache == null) {
             mCache = new GCacheImpl(context.getCacheDir());
         }
         return mCache;

@@ -25,7 +25,7 @@ public class MyActivity extends BaseActivity implements View.OnClickListener {
     private LocationManager lm;
     private static final String AD_UNIT_ID = "ca-app-pub-4706145830093249/3114135639";
     private static final String TAG = MyActivity.class.getName();
-    private Button btn_bdmap;
+    private Button btn_bdmap, btn_side_chef;
     //百度定位
     private LocationClientOption.LocationMode tempMode = LocationClientOption.LocationMode.Battery_Saving;
     private String tempcoor = "gcj02";
@@ -47,12 +47,13 @@ public class MyActivity extends BaseActivity implements View.OnClickListener {
         adView.setAdUnitId(AD_UNIT_ID);
         LinearLayout layout = (LinearLayout) findViewById(R.id.linearLayout);
         layout.addView(adView);
+
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
         adView.loadAd(adRequest);
         btn_bdmap = (Button) findViewById(R.id.btn_bdmap);
-
+        btn_side_chef = (Button) findViewById(R.id.btn_side_chef);
         mLocationClient = new LocationClient(getApplicationContext());
         mLocationClient.registerLocationListener(myListener); // 注册监听函数
         geofenceClient = new GeofenceClient(getApplicationContext());
@@ -64,6 +65,7 @@ public class MyActivity extends BaseActivity implements View.OnClickListener {
     @Override
     protected void initListener() {
         btn_bdmap.setOnClickListener(this);
+        btn_side_chef.setOnClickListener(this);
     }
 
     @Override
@@ -119,7 +121,6 @@ public class MyActivity extends BaseActivity implements View.OnClickListener {
      */
     @Override
     public void onDestroy() {
-        // Destroy the AdView.
         if (adView != null) {
             adView.destroy();
         }
@@ -135,6 +136,11 @@ public class MyActivity extends BaseActivity implements View.OnClickListener {
                 intent.setClass(context, BaiduMapActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.btn_side_chef:
+                intent.setClass(context, SideChefActivity.class);
+                startActivity(intent);
+                break;
+
         }
     }
 }
