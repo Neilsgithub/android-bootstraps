@@ -114,6 +114,10 @@
             android:name=".activity.SideChefActivity"
             android:label="@string/title_activity_side_chef" >
         </activity>
+        <activity
+            android:name=".activity.TestActivity"
+            android:label="@string/title_activity_test" >
+        </activity>
     </application>
 
 </manifest>

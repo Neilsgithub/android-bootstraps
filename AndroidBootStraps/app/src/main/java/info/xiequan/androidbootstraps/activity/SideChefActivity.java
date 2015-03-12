@@ -1,7 +1,6 @@
 package info.xiequan.androidbootstraps.activity;
 
 
-import android.util.Log;
 import android.widget.ListView;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
@@ -45,14 +44,14 @@ public class SideChefActivity extends BaseActivity {
         pullToRefreshListView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
             @Override
             public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
-//                // 下拉
+                // 下拉
                 page = 1;
                 getDataFromService(page, size);
             }
 
             @Override
             public void onPullUpToRefresh(PullToRefreshBase<ListView> refreshView) {
-//                // 上拉
+                // 上拉
                 page++;
                 getDataFromService(page, size);
 
@@ -75,6 +74,7 @@ public class SideChefActivity extends BaseActivity {
             @Override
             public void onSuccess(String response) {
                 handleDataFromService(response);
+                onRefreshComplete();
             }
 
             @Override
@@ -87,7 +87,6 @@ public class SideChefActivity extends BaseActivity {
     }
 
     private void handleDataFromService(String json) {
-        Log.e("messi", json);
         RawData rawData = GsonUtil.fromJson(json, RawData.class);
 
         if (page <= 1) {
