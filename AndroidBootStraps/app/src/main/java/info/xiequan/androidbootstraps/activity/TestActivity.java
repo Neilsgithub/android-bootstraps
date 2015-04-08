@@ -17,5 +17,4 @@ public class TestActivity extends ActionBarActivity {
         hello = (TextView) findViewById(R.id.hello);
     }
 
-
 }
