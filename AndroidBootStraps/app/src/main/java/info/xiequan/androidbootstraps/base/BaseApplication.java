@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentActivity;
 
 import com.baidu.mapapi.SDKInitializer;
 
+
 import java.io.File;
 import java.util.ArrayList;
 
@@ -37,6 +38,7 @@ public class BaseApplication extends Application {
         AppConfig.register(this);
         HttpFactory.register(this);
         CacheManager.register(this);
+
     }
 
     /**

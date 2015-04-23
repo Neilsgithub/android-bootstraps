@@ -2,6 +2,7 @@ package info.xiequan.androidbootstraps.activity;
 
 import android.content.Intent;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -14,6 +15,7 @@ import com.baidu.location.LocationClientOption;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.squareup.picasso.Picasso;
 
 import info.xiequan.androidbootstraps.R;
 import info.xiequan.androidbootstraps.base.BaseActivity;
@@ -34,6 +36,8 @@ public class MyActivity extends BaseActivity implements View.OnClickListener {
     private GeofenceClient geofenceClient;
     private BDLocationListener myListener = new MyLocationListener();
     private String longtitude, latitude;
+//    private SimpleDraweeView draweeView;
+    private Picasso picasso;
 
     @Override
     protected void beforeInitView() {
@@ -59,6 +63,7 @@ public class MyActivity extends BaseActivity implements View.OnClickListener {
         geofenceClient = new GeofenceClient(getApplicationContext());
         setLocationOption();
         mLocationClient.start();
+
 
     }
 
@@ -96,7 +101,7 @@ public class MyActivity extends BaseActivity implements View.OnClickListener {
              */
             latitude = String.valueOf(location.getLatitude());
             longtitude = String.valueOf(location.getLongitude());
-            AndroidUtils.toast(context, "纬度" + latitude + "经度" + latitude);
+//            AndroidUtils.toast(context, "纬度" + latitude + "经度" + latitude);
         }
     }
 
